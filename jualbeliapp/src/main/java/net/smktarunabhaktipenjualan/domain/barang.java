@@ -22,7 +22,7 @@ public class barang implements Serializable{
 	
 	@Id
 	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="sytem-uuid",strategy="uuid2")
+	@GenericGenerator(name="system-uuid",strategy="uuid2")
 	private String Id;
 	
 	@NotNull

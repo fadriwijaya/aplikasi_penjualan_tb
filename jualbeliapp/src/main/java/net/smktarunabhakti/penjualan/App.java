@@ -14,7 +14,9 @@ public class App {
 	{
 
 		 appCtx = new ClassPathXmlApplicationContext("classpath:net/smktarunabhakti/penjualan/ApplicationContext.xml");
-		 appService = (AppService) appCtx.getBean("AppService");
+		 
+		 appService = (AppService) appCtx.getBean("services");
+		 
 		 saveBarang();
 	
 	}

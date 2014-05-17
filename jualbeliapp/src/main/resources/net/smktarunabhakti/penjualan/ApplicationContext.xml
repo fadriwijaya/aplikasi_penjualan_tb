@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
-
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		  http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/context 
@@ -17,7 +18,7 @@
 ">
 
 	<context:property-placeholder location="classpath*:jdbc.properties" />
-	<context:component-scan base-package="net.smktarunabhakti.penjualan"/>
+	<context:component-scan base-package="net.smktarunabhaktipenjualan"/>
 	<jpa:repositories base-package="net.smktarunabhaktipenjualan.dao" />
 	<context:annotation-config />
 	<tx:annotation-driven />
@@ -25,12 +26,12 @@
 		destroy-method="close" p:driverClassName="${jdbc.driver}" p:url="${jdbc.url}"
 		p:username="${jdbc.username}" p:password="${jdbc.password}" p:maxWait="40000"
 		p:maxActive="80" p:maxIdle="20" />
+		
 	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
 		id="transactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory">
-		</property>
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
 		<property name="jpaDialect">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
 		</property>
 
 	</bean>
@@ -60,8 +61,8 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
 		p:dataSource-ref="dataSource" 
-		p:configLocation="/net/smktarunabhakti/penjualan/hibernate.cfg.xml">
-
+		p:configLocation="classpath:hibernate.cfg.xml">
+		
 	</bean>
 	
 	

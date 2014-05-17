@@ -15,7 +15,7 @@ import net.smktarunabhaktipenjualan.service.AppService;
 
 
 @SuppressWarnings("unchecked")
-@Service("AppService")
+@Service("services")
 @Transactional
 public class AppServiceImpl implements AppService {
 
